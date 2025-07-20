@@ -131,7 +131,7 @@ const ProjectsSection = () => {
                   
                   {project.url && (
                     <Button 
-                      className="w-full bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/20 text-foreground animate-pulse hover:animate-none"
+                      className="w-full bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/20 text-foreground animate-breathe hover:animate-none hover:scale-105 transition-transform"
                       asChild
                     >
                       <a 
