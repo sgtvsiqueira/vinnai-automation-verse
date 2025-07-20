@@ -6,6 +6,7 @@ import { ExternalLink, MessageSquare, Share2, Youtube, DollarSign, MapPin } from
 const ProjectsSection = () => {
   const projects = [
     {
+      id: 1,
       title: "ChatBot com RAG",
       description: "Sistema de chatbot inteligente com Retrieval-Augmented Generation, capaz de responder perguntas complexas baseadas em documentos específicos da empresa.",
       icon: MessageSquare,
@@ -14,14 +15,16 @@ const ProjectsSection = () => {
       featured: true
     },
     {
+      id: 2,
       title: "Automação de Redes Sociais",
       description: "Criação automática de conteúdo para múltiplas plataformas sociais usando IA, com agendamento inteligente e otimização de engajamento.",
       icon: Share2,
       tags: ["Social Media", "IA", "Automação", "Conteúdo"],
-      url: "https://n8n.io/workflows/3066-automate-multi-platform-social-media-content-creation-with-ai/",
+      url: "/automacao-redes-sociais",
       gradient: "from-accent to-primary"
     },
     {
+      id: 3,
       title: "Monitor de Canal YouTube",
       description: "Sistema de monitoramento automatizado de canais favoritos no YouTube através de RSS feeds com notificações em tempo real.",
       icon: Youtube,
@@ -30,6 +33,7 @@ const ProjectsSection = () => {
       gradient: "from-primary-glow to-accent"
     },
     {
+      id: 4,
       title: "Pesquisa de Preços Competitivos",
       description: "Monitoramento automatizado de preços da concorrência com web scraping, integração com Google Sheets e alertas via Telegram.",
       icon: DollarSign,
@@ -38,6 +42,7 @@ const ProjectsSection = () => {
       gradient: "from-accent to-primary-glow"
     },
     {
+      id: 5,
       title: "Geração de Leads B2B",
       description: "Extração automatizada de leads comerciais do Google Maps usando OpenAI para classificação e organização em Google Sheets.",
       icon: MapPin,
@@ -129,8 +134,12 @@ const ProjectsSection = () => {
                       className="w-full bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/20 text-foreground"
                       asChild
                     >
-                      <a href={project.url} target="_blank" rel="noopener noreferrer">
-                        Ver Projeto
+                      <a 
+                        href={project.url} 
+                        target={project.url.startsWith('/') ? "_self" : "_blank"} 
+                        rel={project.url.startsWith('/') ? "" : "noopener noreferrer"}
+                      >
+                        Quero Testar
                         <ExternalLink className="ml-2 w-4 h-4" />
                       </a>
                     </Button>
