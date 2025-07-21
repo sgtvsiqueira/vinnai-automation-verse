@@ -86,7 +86,7 @@ const Index = () => {
                 Como Podemos Automatizar Seu Processo?
               </h2>
               <p className="text-lg text-muted-foreground">
-                Conte-nos em detalhes sobre seu processo atual e nossa IA irá analisar e sugerir automações personalizadas
+                Converse em tempo real com nossa IA especializada em automação e receba sugestões personalizadas
               </p>
             </div>
             
