@@ -38,17 +38,24 @@ const Index = () => {
     setIsLoading(true);
 
     try {
+      const payload = {
+        message: userMessage,
+        timestamp: new Date().toISOString(),
+        source: "site_chat"
+      };
+      
+      console.log("Enviando payload para webhook:", payload);
+      
       const response = await fetch("https://webhookn8n.vsiqueira.online/webhook/site", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          message: userMessage,
-          timestamp: new Date().toISOString(),
-          source: "site_chat"
-        }),
+        body: JSON.stringify(payload),
       });
+      
+      console.log("Status da resposta:", response.status);
+      console.log("Headers da resposta:", response.headers);
 
       if (response.ok) {
         const data = await response.json();
