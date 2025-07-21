@@ -61,10 +61,11 @@ const Index = () => {
       }
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
-      setMessages([...newMessages, { 
-        role: "ai", 
-        content: "Obrigado pela sua mensagem! Recebi seu pedido e em breve nossa equipe entrará em contato com sugestões de automação personalizadas para seu processo."
-      }]);
+      toast({
+        title: "Erro",
+        description: "Erro ao conectar com o assistente. Tente novamente.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -133,6 +134,12 @@ const Index = () => {
                     placeholder="Descreva seu processo atual em detalhes... Ex: 'Preciso automatizar o atendimento no WhatsApp, hoje respondo manualmente mais de 100 mensagens por dia sobre...'"
                     className="flex-1 min-h-[100px] resize-none rounded-lg border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     disabled={isLoading}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                      }
+                    }}
                   ></textarea>
                   <button
                     onClick={sendMessage}
