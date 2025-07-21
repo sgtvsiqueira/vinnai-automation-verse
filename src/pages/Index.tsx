@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useRef, useEffect } from "react";
 import Navigation from "@/components/ui/navigation";
 import HeroSection from "@/components/ui/hero-section";
 import ServicesSection from "@/components/ui/services-section";
@@ -17,10 +18,19 @@ const Index = () => {
     }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const sendMessage = async () => {
-    const messageInput = document.getElementById("user-message") as HTMLTextAreaElement;
-    const userMessage = messageInput.value.trim();
+    const userMessage = inputValue.trim();
     
     if (!userMessage) {
       toast({
@@ -34,10 +44,16 @@ const Index = () => {
     // Adicionar mensagem do usuário
     const newMessages = [...messages, { role: "user", content: userMessage }];
     setMessages(newMessages);
-    messageInput.value = "";
+    setInputValue("");
     setIsLoading(true);
 
     try {
+      console.log("Enviando dados para webhook:", {
+        message: userMessage,
+        timestamp: new Date().toISOString(),
+        source: "site_chat"
+      });
+
       const response = await fetch("https://webhookn8n.vsiqueira.online/webhook/site", {
         method: "POST",
         headers: {
@@ -50,17 +66,26 @@ const Index = () => {
         }),
       });
 
+      console.log("Status da resposta:", response.status);
+      console.log("Headers da resposta:", response.headers);
+
       if (response.ok) {
         const data = await response.json();
+        console.log("Dados recebidos do webhook:", data);
+        
         setMessages([...newMessages, { 
           role: "ai", 
           content: data.response || data.message || "Obrigado pela sua mensagem! Vou analisar seu processo e em breve enviarei sugestões de automação personalizadas."
         }]);
       } else {
-        throw new Error("Erro na resposta do servidor");
+        throw new Error(`Erro na resposta do servidor: ${response.status}`);
       }
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
+      setMessages([...newMessages, { 
+        role: "ai", 
+        content: "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente em alguns instantes."
+      }]);
       toast({
         title: "Erro",
         description: "Erro ao conectar com o assistente. Tente novamente.",
@@ -68,6 +93,13 @@ const Index = () => {
       });
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
     }
   };
 
@@ -126,24 +158,21 @@ const Index = () => {
                       </div>
                     </div>
                   )}
+                  <div ref={messagesEndRef} />
                 </div>
                 
                 <div className="flex space-x-2">
                   <textarea
-                    id="user-message"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     placeholder="Descreva seu processo atual em detalhes... Ex: 'Preciso automatizar o atendimento no WhatsApp, hoje respondo manualmente mais de 100 mensagens por dia sobre...'"
                     className="flex-1 min-h-[100px] resize-none rounded-lg border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                     disabled={isLoading}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && !e.shiftKey) {
-                        e.preventDefault();
-                        sendMessage();
-                      }
-                    }}
-                  ></textarea>
+                  />
                   <button
                     onClick={sendMessage}
-                    disabled={isLoading}
+                    disabled={isLoading || !inputValue.trim()}
                     className="px-6 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:opacity-90 transition-opacity animate-breathe hover:animate-none disabled:opacity-50 disabled:cursor-not-allowed disabled:animate-none"
                   >
                     {isLoading ? 'Enviando...' : 'Enviar'}
