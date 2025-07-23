@@ -168,12 +168,9 @@ const CTASection = () => {
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
-                    "Enviando desafio..."
+                    "Enviando..."
                   ) : (
-                    <>
-                      Enviar desafio
-                      <Send className="ml-2 w-5 h-5" />
-                    </>
+                    "Enviar"
                   )}
                 </Button>
               </form>
