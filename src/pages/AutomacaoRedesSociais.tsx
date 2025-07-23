@@ -52,129 +52,43 @@ const AutomacaoRedesSociais = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              🚀 Automação de Conteúdo com IA para Redes Sociais
+              Automação de Redes Sociais
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Uma ferramenta que cria e publica automaticamente posts nas suas redes sociais usando inteligência artificial
+              Transforme suas ideias em conteúdo viral para múltiplas plataformas com inteligência artificial
             </p>
           </div>
 
-          {/* Content Sections */}
-          <div className="space-y-16">
-            {/* What is it */}
-            <Card className="border-border bg-card/50 backdrop-blur p-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">1. O que é isso?</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Uma ferramenta que cria e publica automaticamente posts nas suas redes sociais (X, Instagram, Facebook, LinkedIn etc.), 
-                usando inteligência artificial para escrever os textos, escolher hashtags, emojis e até sugerir imagens.
-              </p>
+          {/* Features */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="border-border bg-card/50 backdrop-blur">
+              <CardHeader>
+                <Target className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Conteúdo Direcionado</CardTitle>
+                <CardDescription>
+                  IA analisa seu público e cria posts personalizados para cada plataforma
+                </CardDescription>
+              </CardHeader>
             </Card>
 
-            {/* Why it makes difference */}
-            <Card className="border-border bg-card/50 backdrop-blur p-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">2. Por que isso faz diferença?</h2>
-              <div className="space-y-4">
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  <strong className="text-foreground">Economia de tempo:</strong> tarefas como escrever e postar manualmente em cada rede social podem levar horas. 
-                  Com essa automação, você ganha de 40% a 80% de economia de tempo.
-                </p>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  <strong className="text-foreground">Presença constante:</strong> mantém suas redes ativas mesmo quando você está ocupado, 
-                  de férias ou focado em outras tarefas.
-                </p>
-              </div>
+            <Card className="border-border bg-card/50 backdrop-blur">
+              <CardHeader>
+                <Clock className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Agendamento Inteligente</CardTitle>
+                <CardDescription>
+                  Postagens automáticas nos melhores horários para máximo engajamento
+                </CardDescription>
+              </CardHeader>
             </Card>
 
-            {/* Who benefits */}
-            <Card className="border-border bg-card/50 backdrop-blur p-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">3. Quem se beneficia disso?</h2>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-primary">Médias e pequenas empresas</h3>
-                  <p className="text-muted-foreground">
-                    Possibilita uma presença digital profissional e regular sem precisar contratar equipe de marketing.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-primary">Autônomos e profissionais liberais</h3>
-                  <p className="text-muted-foreground">
-                    Dá mais tempo para o que importa, sem deixar de se conectar com o público.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-primary">Consultores e pequenas agências</h3>
-                  <p className="text-muted-foreground">
-                    Conseguem oferecer conteúdo consistente e escalável para clientes sem esforço manual.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            {/* How it works */}
-            <Card className="border-border bg-card/50 backdrop-blur p-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">4. Como funciona, sem complicação</h2>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">1</div>
-                  <p className="text-muted-foreground">Você entrega um tema ou ideia.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">2</div>
-                  <p className="text-muted-foreground">A IA gera o texto, com formato e emojis certos para cada rede.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">3</div>
-                  <p className="text-muted-foreground">Sugestões de imagem são feitas automaticamente.</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">4</div>
-                  <p className="text-muted-foreground">Você recebe para aprovar (antes de publicar, para garantir que está tudo certo).</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-bold">5</div>
-                  <p className="text-muted-foreground">O post é publicado nos dias e horários que você escolheu.</p>
-                </div>
-              </div>
-            </Card>
-
-            {/* Practical benefits */}
-            <Card className="border-border bg-card/50 backdrop-blur p-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">5. Benefícios práticos</h2>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <p className="text-muted-foreground">Frequência constante de publicações, sem falhas</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <p className="text-muted-foreground">Textos adaptados para cada rede, aumentando engajamento</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <p className="text-muted-foreground">Imagem ou vídeo incluído, sem precisar de designer</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <p className="text-muted-foreground">Você revisa antes, garantindo tom e qualidade</p>
-                </div>
-                <div className="flex items-center gap-3 md:col-span-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <p className="text-muted-foreground">Crescimento sem aumentar o trabalho manual — ajuda a escalar seu atendimento ou negócios</p>
-                </div>
-              </div>
-            </Card>
-
-            {/* Why it works */}
-            <Card className="border-border bg-card/50 backdrop-blur p-8">
-              <h2 className="text-2xl font-bold mb-4 text-foreground">6. Veja por que isso funciona</h2>
-              <div className="space-y-4">
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Em testes, médias e pequenas empresas economizam até metade do tempo dedicado ao marketing de conteúdo.
-                </p>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Quem não automatiza gasta muito tempo copiando e colando em cada rede todos os dias.
-                </p>
-              </div>
+            <Card className="border-border bg-card/50 backdrop-blur">
+              <CardHeader>
+                <TrendingUp className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Análise de Performance</CardTitle>
+                <CardDescription>
+                  Relatórios detalhados sobre alcance, engajamento e crescimento
+                </CardDescription>
+              </CardHeader>
             </Card>
           </div>
         </div>
@@ -185,13 +99,10 @@ const AutomacaoRedesSociais = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              📞 Quer começar?
+              Teste a Automação Agora
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              Teste um fluxo piloto com um ou dois posts por semana.
-            </p>
-            <p className="text-muted-foreground">
-              Avalie a economia de tempo e o alcance. Se achar legal, ampliamos a frequência, as redes, a geração de imagem e o pipeline de publicação.
+            <p className="text-muted-foreground text-lg">
+              Descreva sua ideia e receba conteúdo personalizado para suas redes sociais
             </p>
           </div>
 
