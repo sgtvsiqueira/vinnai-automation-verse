@@ -1,70 +1,11 @@
-import { useState } from "react";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, Target, BarChart3, FileSpreadsheet, Zap, Users, TrendingUp, MapPin } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const GeracaoLeadsB2B = () => {
-  const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    nome: "",
-    celular: "",
-    email: "",
-    busca: ""
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const response = await fetch(`https://vplcuepyzexsjaulmyan.functions.supabase.co/functions/v1/teste-automacao-leads`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Solicitação enviada!",
-          description: "Você receberá os resultados em seu email e WhatsApp em breve.",
-        });
-        setFormData({
-          nome: "",
-          celular: "",
-          email: "",
-          busca: ""
-        });
-      } else {
-        throw new Error('Erro ao enviar solicitação');
-      }
-    } catch (error) {
-      toast({
-        title: "Erro",
-        description: "Falha ao enviar solicitação. Tente novamente.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -315,91 +256,18 @@ const GeracaoLeadsB2B = () => {
         </div>
       </section>
 
-      {/* Formulário de Teste */}
+      {/* CTA Final */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-secondary">
-        <div className="container mx-auto max-w-2xl">
-          <Card className="bg-white/95 backdrop-blur-sm">
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl font-bold text-primary mb-4">
-                🚀 Teste nossa automação gratuitamente
-              </CardTitle>
-              <CardDescription className="text-lg">
-                Informe o que você deseja buscar e receba uma amostra dos leads encontrados diretamente no seu email e WhatsApp
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="nome">Nome completo *</Label>
-                    <Input
-                      id="nome"
-                      name="nome"
-                      type="text"
-                      value={formData.nome}
-                      onChange={handleInputChange}
-                      placeholder="Seu nome completo"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="celular">WhatsApp *</Label>
-                    <Input
-                      id="celular"
-                      name="celular"
-                      type="tel"
-                      value={formData.celular}
-                      onChange={handleInputChange}
-                      placeholder="(11) 99999-9999"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="seu@email.com"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="busca">O que você quer buscar? *</Label>
-                  <Textarea
-                    id="busca"
-                    name="busca"
-                    value={formData.busca}
-                    onChange={handleInputChange}
-                    placeholder="Ex: Clínicas veterinárias em São Paulo, Lojas de autopeças em Campinas, Academias de ginástica no Rio de Janeiro..."
-                    rows={4}
-                    required
-                  />
-                  <p className="text-sm text-muted-foreground">
-                    Seja específico sobre o tipo de negócio e localização para melhores resultados
-                  </p>
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
-                  disabled={isLoading}
-                >
-                  {isLoading ? "Processando..." : "Testar Automação Gratuita 🎯"}
-                </Button>
-
-                <p className="text-xs text-center text-muted-foreground">
-                  * Campos obrigatórios. Você receberá uma amostra de até 10 leads qualificados.
-                </p>
-              </form>
-            </CardContent>
-          </Card>
+        <div className="container mx-auto max-w-4xl text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Pronto para revolucionar sua geração de leads?
+          </h2>
+          <p className="text-xl mb-8 text-white/90">
+            Comece hoje mesmo e veja como a automação inteligente pode transformar seus resultados.
+          </p>
+          <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
+            Solicitar Demonstração
+          </Button>
         </div>
       </section>
 
