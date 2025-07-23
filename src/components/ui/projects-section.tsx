@@ -20,7 +20,7 @@ const ProjectsSection = () => {
       description: "Criação automática de conteúdo para múltiplas plataformas sociais usando IA, com agendamento inteligente e otimização de engajamento.",
       icon: Share2,
       tags: ["Social Media", "IA", "Automação", "Conteúdo"],
-      url: "/automacao-redes-sociais",
+      url: "https://wa.me/5571981226491?text=Quero%20automatizar%20minhas%20redes%20sociais!",
       gradient: "from-accent to-primary"
     },
     {
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       description: "Sistema de monitoramento automatizado de canais favoritos no YouTube através de RSS feeds com notificações em tempo real.",
       icon: Youtube,
       tags: ["YouTube", "RSS", "Monitoramento", "Notificações"],
-      url: "https://n8n.io/workflows/3003-monitor-favorite-youtube-channels-through-rss-feeds-and-receive-notifications/",
+      url: "https://wa.me/5571981226491?text=Quero%20monitorar%20a%20concorr%C3%AAncia%20no%20YouTube!",
       gradient: "from-primary-glow to-accent"
     },
     {
@@ -38,7 +38,7 @@ const ProjectsSection = () => {
       description: "Monitoramento automatizado de preços da concorrência com web scraping, integração com Google Sheets e alertas via Telegram.",
       icon: DollarSign,
       tags: ["Web Scraping", "Preços", "Google Sheets", "Telegram"],
-      url: "https://n8n.io/workflows/4640-competitor-price-monitoring-with-web-scrapinggoogle-sheets-and-telegram/",
+      url: "https://wa.me/5571981226491?text=Quero%20monitorar%20pre%C3%A7os%20na%20internet!",
       gradient: "from-accent to-primary-glow"
     },
     {
@@ -47,7 +47,7 @@ const ProjectsSection = () => {
       description: "Extração automatizada de leads comerciais do Google Maps usando OpenAI para classificação e organização em Google Sheets.",
       icon: MapPin,
       tags: ["Lead Generation", "Google Maps", "OpenAI", "B2B"],
-      url: "https://n8n.io/workflows/3443-scrape-business-leads-from-google-maps-using-openai-and-google-sheets/",
+      url: "https://wa.me/5571981226491?text=Quero%20gerar%20leads%20qualificados!",
       gradient: "from-primary to-accent"
     }
   ];
