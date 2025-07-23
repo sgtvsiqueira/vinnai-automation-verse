@@ -28,7 +28,8 @@ const CTASection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('https://webhookn8n.vsiqueira.online/webhook/site', {
+      // Fire and forget - não espera resposta
+      fetch('https://webhookn8n.vsiqueira.online/webhook/site', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,20 +37,17 @@ const CTASection = () => {
         body: JSON.stringify(formData),
       });
       
-      if (response.ok) {
-        // Reset form
-        setFormData({
-          nome: '',
-          celular: '',
-          email: '',
-          descricaoDesafio: ''
-        });
-        alert('Desafio enviado com sucesso! Entraremos em contato em breve.');
-      } else {
-        alert('Erro ao enviar. Tente novamente.');
-      }
+      // Reset form imediatamente
+      setFormData({
+        nome: '',
+        celular: '',
+        email: '',
+        descricaoDesafio: ''
+      });
+      
+      alert('Informações enviadas com sucesso! Entraremos em contato em breve.');
     } catch (error) {
-      alert('Erro ao enviar. Verifique sua conexão e tente novamente.');
+      alert('Erro ao enviar. Tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
