@@ -4,13 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { Bot, Send, User, Phone, Mail } from "lucide-react";
+import { Bot, Send, User, Phone, Mail, Instagram, Globe } from "lucide-react";
 
 const CTASection = () => {
   const [formData, setFormData] = useState({
     nome: '',
     celular: '',
     email: '',
+    instagram: '',
+    site: '',
     descricaoDesafio: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -42,6 +44,8 @@ const CTASection = () => {
         nome: '',
         celular: '',
         email: '',
+        instagram: '',
+        site: '',
         descricaoDesafio: ''
       });
       
@@ -138,6 +142,41 @@ const CTASection = () => {
                   </div>
                 </div>
 
+                {/* Additional Information */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="instagram" className="flex items-center gap-2">
+                      <Instagram className="w-4 h-4" />
+                      Instagram
+                    </Label>
+                    <Input
+                      id="instagram"
+                      name="instagram"
+                      type="text"
+                      value={formData.instagram}
+                      onChange={handleInputChange}
+                      placeholder="@seu_instagram"
+                      className="bg-background/50 border-border/50"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="site" className="flex items-center gap-2">
+                      <Globe className="w-4 h-4" />
+                      Site
+                    </Label>
+                    <Input
+                      id="site"
+                      name="site"
+                      type="url"
+                      value={formData.site}
+                      onChange={handleInputChange}
+                      placeholder="https://seusite.com.br"
+                      className="bg-background/50 border-border/50"
+                    />
+                  </div>
+                </div>
+
                 {/* Challenge Description */}
                 <div className="space-y-2">
                   <Label htmlFor="descricaoDesafio" className="flex items-center gap-2">
@@ -150,7 +189,7 @@ const CTASection = () => {
                     rows={6}
                     value={formData.descricaoDesafio}
                     onChange={handleInputChange}
-                    placeholder="Ex: Quero automatizar o atendimento ao cliente pelo WhatsApp e reduzir o tempo de resposta em até 70%. Também preciso automatizar a geração de relatórios de vendas que hoje leva 3 horas por dia..."
+                    placeholder="Ex: Sou do ramo alimentício e quero automatizar o atendimento ao cliente pelo WhatsApp e reduzir o tempo de resposta em até 70%. Também preciso automatizar a geração de relatórios de vendas que hoje leva 3 horas por dia..."
                     required
                     className="bg-background/50 border-border/50 resize-none"
                   />
