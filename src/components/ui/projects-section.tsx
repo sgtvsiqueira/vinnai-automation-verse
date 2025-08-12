@@ -1,54 +1,33 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, MessageSquare, Share2, Youtube, DollarSign, MapPin } from "lucide-react";
+import { ExternalLink, MessageSquare, Share2, BarChart3, DollarSign, MapPin } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "ChatBot com RAG",
-      description: "Sistema de chatbot inteligente com Retrieval-Augmented Generation, capaz de responder perguntas complexas baseadas em documentos específicos da empresa.",
+      title: "Loja de bairro",
+      description: "Chatbot no WhatsApp que responde dúvidas de preço, horário ou produtos mesmo quando o dono está longe, ajudando a não perder vendas.",
       icon: MessageSquare,
-      tags: ["IA", "NLP", "RAG", "Chatbot"],
-      gradient: "from-primary to-primary-glow",
-      featured: true
+      tags: ["WhatsApp", "Chatbot", "Atendimento", "Vendas"],
+      gradient: "from-primary to-primary-glow"
     },
     {
       id: 2,
-      title: "Automação de Redes Sociais",
-      description: "Criação automática de conteúdo para múltiplas plataformas sociais usando IA, com agendamento inteligente e otimização de engajamento.",
+      title: "Consultório pequeno",
+      description: "Lembretes automáticos de consulta por mensagem e feedbacks pós-atendimento, criando um serviço mais cuidadoso e eficiente sem precisar de staff extra.",
       icon: Share2,
-      tags: ["Social Media", "IA", "Automação", "Conteúdo"],
-      url: "https://wa.me/5571981226491?text=Quero%20automatizar%20minhas%20redes%20sociais!",
+      tags: ["Saúde", "Lembretes", "Feedback", "Automação"],
       gradient: "from-accent to-primary"
     },
     {
       id: 3,
-      title: "Monitor de Canal YouTube",
-      description: "Sistema de monitoramento automatizado de canais favoritos no YouTube através de RSS feeds com notificações em tempo real.",
-      icon: Youtube,
-      tags: ["YouTube", "RSS", "Monitoramento", "Notificações"],
-      url: "https://wa.me/5571981226491?text=Quero%20monitorar%20a%20concorr%C3%AAncia%20no%20YouTube!",
+      title: "Consultoria ou escritório",
+      description: "Extrai os dados relevantes de relatórios e já monta gráficos em tempo real, pronto pra você decidir o que fazer.",
+      icon: BarChart3,
+      tags: ["Relatórios", "Análise", "Gráficos", "Decisões"],
       gradient: "from-primary-glow to-accent"
-    },
-    {
-      id: 4,
-      title: "Pesquisa de Preços Competitivos",
-      description: "Monitoramento automatizado de preços da concorrência com web scraping, integração com Google Sheets e alertas via Telegram.",
-      icon: DollarSign,
-      tags: ["Web Scraping", "Preços", "Google Sheets", "Telegram"],
-      url: "https://wa.me/5571981226491?text=Quero%20monitorar%20pre%C3%A7os%20na%20internet!",
-      gradient: "from-accent to-primary-glow"
-    },
-    {
-      id: 5,
-      title: "Geração de Leads B2B",
-      description: "Extração automatizada de leads comerciais do Google Maps usando OpenAI para classificação e organização em Google Sheets.",
-      icon: MapPin,
-      tags: ["Lead Generation", "Google Maps", "OpenAI", "B2B"],
-      url: "https://wa.me/5571981226491?text=Quero%20gerar%20leads%20qualificados!",
-      gradient: "from-primary to-accent"
     }
   ];
 
@@ -62,24 +41,18 @@ const ProjectsSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-accent bg-clip-text text-transparent">
-              Projetos em Destaque
-            </span>
+              Exemplos práticos
+            </span> (para entender de verdade)
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conheça algumas das soluções que desenvolvemos para automatizar e otimizar 
-            processos empresariais com tecnologia de ponta
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
               <Card 
                 key={index}
-                className={`group hover:shadow-glow transition-all duration-500 border-border/50 bg-card/70 backdrop-blur-sm overflow-hidden ${
-                  project.featured ? 'lg:col-span-2' : ''
-                }`}
+                className="group hover:shadow-glow transition-all duration-500 border-border/50 bg-card/70 backdrop-blur-sm overflow-hidden"
               >
                 <CardHeader>
                   <div className="flex items-start justify-between">
@@ -90,26 +63,9 @@ const ProjectsSection = () => {
                       <div>
                         <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                           {project.title}
-                          {project.featured && (
-                            <Badge className="ml-2 bg-gradient-primary text-primary-foreground">
-                              Destaque
-                            </Badge>
-                          )}
                         </CardTitle>
                       </div>
                     </div>
-                    {project.url && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity"
-                        asChild
-                      >
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    )}
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -129,21 +85,6 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                   
-                  {project.url && (
-                    <Button 
-                      className="w-full bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/20 text-foreground animate-breathe hover:animate-none hover:scale-105 transition-transform"
-                      asChild
-                    >
-                      <a 
-                        href={project.url} 
-                        target={project.url.startsWith('/') ? "_self" : "_blank"} 
-                        rel={project.url.startsWith('/') ? "" : "noopener noreferrer"}
-                      >
-                        Quero Testar
-                        <ExternalLink className="ml-2 w-4 h-4" />
-                      </a>
-                    </Button>
-                  )}
                 </CardContent>
               </Card>
             );

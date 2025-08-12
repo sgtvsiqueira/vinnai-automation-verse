@@ -13,7 +13,8 @@ const CTASection = () => {
     email: '',
     instagram: '',
     site: '',
-    descricaoDesafio: ''
+    areaAtuacao: '',
+    descricaoNegocio: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,7 +47,8 @@ const CTASection = () => {
         email: '',
         instagram: '',
         site: '',
-        descricaoDesafio: ''
+        areaAtuacao: '',
+        descricaoNegocio: ''
       });
       
       alert('Informações enviadas com sucesso! Entraremos em contato em breve.');
@@ -65,21 +67,18 @@ const CTASection = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 flex items-center justify-center gap-3">
-            <Bot className="w-12 h-12" />
-            Conte-me seu <span className="bg-gradient-accent bg-clip-text text-transparent">desafio</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="bg-gradient-accent bg-clip-text text-transparent">Vamos conversar?</span>
           </h2>
           <div className="text-xl text-muted-foreground max-w-4xl mx-auto space-y-4">
             <p>
-              Quais são os problemas ou processos que você deseja automatizar ou solucionar na sua empresa?
+              Queremos ouvir: qual o maior atrito no seu dia a dia empresarial?
             </p>
             <p>
-              Descreva-os brevemente abaixo - pode citar quantos problemas desejar e seja o mais detalhista possível 
-              para melhor entendimento. Eu entrarei em contato com uma proposta personalizada usando inteligência 
-              artificial para aumentar sua eficiência e resultados.
+              Atender cliente, gerar relatórios, postar nas redes, comparar preços, lembrar de compromissos?
             </p>
-            <p className="text-lg font-medium text-primary">
-              A resposta será totalmente personalizada com base em IA para suas necessidades específicas!
+            <p>
+              Conte aqui e nós vamos criar uma proposta personalizada com IA para melhorar sua rotina e resultados — de forma simples e eficiente.
             </p>
           </div>
         </div>
@@ -177,24 +176,42 @@ const CTASection = () => {
                   </div>
                 </div>
 
-                {/* Challenge Description */}
+                {/* Area of Business */}
                 <div className="space-y-2">
-                  <Label htmlFor="descricaoDesafio" className="flex items-center gap-2">
+                  <Label htmlFor="areaAtuacao" className="flex items-center gap-2">
                     <Bot className="w-4 h-4" />
-                    Descreva seus desafios
+                    Área de atuação
+                  </Label>
+                  <Input
+                    id="areaAtuacao"
+                    name="areaAtuacao"
+                    type="text"
+                    value={formData.areaAtuacao}
+                    onChange={handleInputChange}
+                    placeholder="Ex: Alimentício, Varejo, Serviços..."
+                    required
+                    className="bg-background/50 border-border/50"
+                  />
+                </div>
+
+                {/* Business Description */}
+                <div className="space-y-2">
+                  <Label htmlFor="descricaoNegocio" className="flex items-center gap-2">
+                    <Bot className="w-4 h-4" />
+                    Descreva seu negócio
                   </Label>
                   <Textarea
-                    id="descricaoDesafio"
-                    name="descricaoDesafio"
+                    id="descricaoNegocio"
+                    name="descricaoNegocio"
                     rows={6}
-                    value={formData.descricaoDesafio}
+                    value={formData.descricaoNegocio}
                     onChange={handleInputChange}
-                    placeholder="Ex: Sou do ramo alimentício e quero automatizar o atendimento ao cliente pelo WhatsApp e reduzir o tempo de resposta em até 70%. Também preciso automatizar a geração de relatórios de vendas que hoje leva 3 horas por dia..."
+                    placeholder="Ex: Tenho uma loja de alimentação com 3 funcionários. Atendemos clientes presenciais e pelo WhatsApp, mas demora muito para responder. Fazemos controle de estoque manual em planilhas e sempre tem produto em falta. Gostaria de automatizar o atendimento e ter controle melhor do estoque para não perder vendas..."
                     required
                     className="bg-background/50 border-border/50 resize-none"
                   />
                   <p className="text-sm text-muted-foreground">
-                    💡 Dica: Quanto mais detalhes você fornecer, melhor será nossa proposta personalizada!
+                    💡 Dica: Conte sobre seu negócio, processos e dificuldades. Vamos criar um plano personalizado para você!
                   </p>
                 </div>
 

@@ -40,8 +40,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Transformando pequenas e médias empresas através de automações 
-              inteligentes e soluções com inteligência artificial.
+              Revolucionamos negócios com tecnologia de ponta que trabalha 24h por dia, aumentando produtividade e reduzindo custos operacionais.
             </p>
             <div className="flex gap-3">
               <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
@@ -90,15 +89,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                <span className="text-sm">contato@vinnai.com</span>
+                <span className="text-sm">contato@vinnai.tech</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-sm">+55 (11) 99999-9999</span>
+                <span className="text-sm">+55 (71) 98122-6491</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm">São Paulo, Brasil</span>
+                <span className="text-sm">Salvador, Brasil</span>
               </div>
             </div>
           </div>

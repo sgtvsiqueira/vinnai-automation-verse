@@ -5,39 +5,21 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Workflow,
-      title: "Automações Personalizadas",
-      description: "Criamos fluxos automatizados únicos para otimizar os processos da sua empresa, economizando tempo e recursos.",
+      title: "Torne tarefas cansativas rápidas e automáticas",
+      description: "A IA substitui trabalhos manuais e repetitivos — como responder perguntas frequentes ou gerar relatórios — de forma mais rápida e com menos erros. Isso poupa tempo, dinheiro e dor de cabeça mesmo para quem não sabe nada de tecnologia.",
       gradient: "from-primary to-primary-glow"
     },
     {
-      icon: Bot,
-      title: "Integração com IA",
-      description: "Implementamos soluções de inteligência artificial para tornar seus processos mais inteligentes e eficientes.",
+      icon: BarChart3,
+      title: "Tome decisões com base em dados reais e previsões inteligentes",
+      description: "A IA analisa padrões do seu negócio — como vendas ou comportamento de clientes — para te mostrar o que pode dar certo no futuro, como prever demandas ou ajustar estoques.",
       gradient: "from-accent to-primary"
     },
     {
-      icon: Search,
-      title: "Web Scraping",
-      description: "Coletamos dados valiosos da web de forma automatizada para alimentar suas análises e decisões estratégicas.",
+      icon: Bot,
+      title: "Deixe o atendimento mais ágil e humanizado ao mesmo tempo",
+      description: "Com chatbots inteligentes, é possível responder seus clientes 24/7 com rapidez — mas sem perder a empatia —, melhorando a experiência sem precisar de uma pessoa sempre disponível.",
       gradient: "from-primary-glow to-accent"
-    },
-    {
-      icon: BarChart3,
-      title: "Análise de Dados com IA",
-      description: "Transformamos seus dados em insights acionáveis utilizando algoritmos de machine learning e IA.",
-      gradient: "from-accent to-primary-glow"
-    },
-    {
-      icon: Globe,
-      title: "Automação de Redes Sociais",
-      description: "Automatizamos sua presença digital com posts inteligentes e gestão otimizada de conteúdo.",
-      gradient: "from-primary to-accent"
-    },
-    {
-      icon: Zap,
-      title: "Integração de Sistemas",
-      description: "Conectamos diferentes ferramentas e plataformas para criar um ecossistema digital integrado e eficiente.",
-      gradient: "from-primary-glow to-primary"
     }
   ];
 
@@ -47,16 +29,15 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Nossos Serviços
-            </span>
+              Como a IA facilita sua vida
+            </span> (sem complicação)
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos soluções completas em automação e inteligência artificial 
-            para transformar a eficiência da sua empresa
+            Torne tarefas cansativas rápidas e automáticas
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (

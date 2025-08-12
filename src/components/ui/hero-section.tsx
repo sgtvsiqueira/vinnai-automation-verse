@@ -16,13 +16,15 @@ const HeroSection = () => {
         </div>
         
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-          <span className="bg-gradient-primary bg-clip-text text-transparent">VinnAI</span>
+          <span className="bg-gradient-primary bg-clip-text text-transparent">VinnAI</span> — IA ao alcance do seu negócio
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
-          Transformando pequenas e médias empresas através de 
-          <span className="text-primary font-semibold"> automações inteligentes</span> e 
-          <span className="text-accent font-semibold"> soluções com IA</span>
+          Revolucione seu negócio com IA — <span className="text-primary font-semibold">fácil, prática e para todos</span>
+        </p>
+        
+        <p className="text-lg text-muted-foreground mb-8 max-w-4xl mx-auto animate-fade-in" style={{animationDelay: '0.3s'}}>
+          Na VinnAI, acreditamos que inteligência artificial não é coisa de filme — e sim uma ferramenta real e acessível para melhorar o dia a dia de qualquer empresa. A IA não escolhe área — ela ajuda todos os setores!
         </p>
         
         <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in" style={{animationDelay: '0.4s'}}>
@@ -45,7 +47,7 @@ const HeroSection = () => {
             size="lg" 
             className="bg-gradient-primary hover:shadow-primary transition-all duration-300 text-lg px-8 py-6"
           >
-            Ver Projetos
+            Ver Como Funciona
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button 
@@ -53,7 +55,7 @@ const HeroSection = () => {
             size="lg" 
             className="border-primary/50 text-primary hover:bg-primary/10 text-lg px-8 py-6"
           >
-            Fale Conosco
+            Vamos Conversar?
           </Button>
         </div>
       </div>

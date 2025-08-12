@@ -18,8 +18,8 @@ const Navigation = () => {
   const navItems = [
     { label: "Início", href: "#home" },
     { label: "Serviços", href: "#services" },
-    { label: "Projetos", href: "#projects" },
     { label: "Sobre", href: "#about" },
+    { label: "Blog", href: "#blog" },
   ];
 
   const scrollToSection = (href: string) => {
