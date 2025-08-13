@@ -43,13 +43,11 @@ const ServicesSection = () => {
             return (
               <Card 
                 key={index} 
-                className="group hover:shadow-elegant transition-smooth border-border/30 bg-card/70 backdrop-blur-sm hover:scale-105 hover:-translate-y-2 rounded-2xl overflow-hidden"
+                className="group hover:shadow-primary transition-all duration-500 border-border/50 bg-card/50 backdrop-blur-sm hover:scale-105"
               >
-                <CardHeader className="text-center relative">
-                  <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
-                  <div className={`w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow group-hover:shadow-primary group-hover:scale-110 transition-smooth relative overflow-hidden border border-primary/20`}>
-                    <div className="absolute inset-0 bg-gradient-primary opacity-20 animate-pulse" />
-                    <Icon className="w-10 h-10 text-background relative z-10" />
+                <CardHeader className="text-center">
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-glow group-hover:animate-glow`}>
+                    <Icon className="w-8 h-8 text-background" />
                   </div>
                   <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {service.title}

@@ -40,13 +40,12 @@ const AboutSection = () => {
             return (
               <Card 
                 key={index}
-                className="group hover:shadow-elegant transition-smooth border-border/30 bg-card/70 backdrop-blur-sm hover:scale-105 hover:-translate-y-1 rounded-2xl"
+                className="group hover:shadow-primary transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm"
               >
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-glow group-hover:shadow-primary group-hover:scale-110 transition-smooth relative overflow-hidden border border-primary/20">
-                      <div className="absolute inset-0 bg-gradient-primary opacity-20 animate-pulse" />
-                      <Icon className="w-8 h-8 text-primary-foreground relative z-10" />
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0 shadow-lg group-hover:animate-glow">
+                      <Icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
                       <h4 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">

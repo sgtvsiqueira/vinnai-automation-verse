@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 220 25% 5%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 267 84% 81%;
+    --primary: 120 60% 70%;
     --primary-foreground: 220 25% 3%;
-    --primary-glow: 267 90% 88%;
+    --primary-glow: 130 70% 80%;
 
     --secondary: 220 25% 8%;
     --secondary-foreground: 210 40% 98%;
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 220 25% 8%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 312 100% 75%;
+    --accent: 200 100% 50%;
     --accent-foreground: 220 25% 3%;
 
     --destructive: 0 84% 60%;
@@ -35,25 +35,17 @@ All colors MUST be HSL.
 
     --border: 220 25% 15%;
     --input: 220 25% 10%;
-    --ring: 267 84% 81%;
+    --ring: 260 100% 65%;
 
-    /* Modern design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(267 84% 81%), hsl(312 100% 75%), hsl(267 90% 88%));
-    --gradient-accent: linear-gradient(135deg, hsl(312 100% 75%), hsl(267 84% 81%));
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
     --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(220 25% 1%));
-    --gradient-mesh: radial-gradient(circle at 25% 25%, hsl(267 84% 81% / 0.2) 0%, transparent 50%), 
-                     radial-gradient(circle at 75% 75%, hsl(312 100% 75% / 0.2) 0%, transparent 50%);
-    --gradient-hero: linear-gradient(135deg, hsl(220 25% 3%) 0%, hsl(267 84% 15%) 50%, hsl(220 25% 3%) 100%);
-    
-    --shadow-primary: 0 25px 50px -12px hsl(267 84% 81% / 0.25);
-    --shadow-glow: 0 0 50px hsl(267 90% 88% / 0.5), 0 0 100px hsl(312 100% 75% / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(220 25% 3% / 0.3);
-    --shadow-elegant: 0 20px 40px -10px hsl(267 84% 81% / 0.2);
-    
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --shadow-primary: 0 10px 40px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
