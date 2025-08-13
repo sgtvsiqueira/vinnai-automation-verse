@@ -44,26 +44,52 @@ const WhatWeOfferSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           {offerings.map((offering, index) => {
             const Icon = offering.icon;
             return (
               <Card 
                 key={index} 
-                className="group hover:shadow-primary transition-all duration-500 border-border/50 bg-card/70 backdrop-blur-sm hover:scale-105"
+                className="group relative overflow-hidden hover:shadow-primary transition-all duration-700 border-2 border-border/30 bg-gradient-to-br from-card/90 via-card/70 to-card/50 backdrop-blur-lg hover:scale-[1.05] hover:border-primary/40"
               >
-                <CardHeader className="text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${offering.gradient} flex items-center justify-center shadow-glow group-hover:animate-glow`}>
-                    <Icon className="w-8 h-8 text-background" />
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-4 left-4 w-2 h-2 bg-primary rounded-full" />
+                  <div className="absolute top-8 right-6 w-1 h-1 bg-accent rounded-full" />
+                  <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-primary rounded-full" />
+                  <div className="absolute bottom-4 right-4 w-2 h-2 bg-accent rounded-full" />
+                </div>
+
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                <CardHeader className="text-center relative z-10 p-8">
+                  {/* Multi-layered icon design */}
+                  <div className="relative mx-auto mb-6 w-fit">
+                    {/* Outer glow */}
+                    <div className="absolute inset-0 w-20 h-20 rounded-3xl bg-gradient-to-br from-primary/30 to-accent/30 blur-xl group-hover:blur-2xl transition-all duration-500" />
+                    {/* Middle layer */}
+                    <div className="absolute inset-1 w-18 h-18 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-sm" />
+                    {/* Main icon container */}
+                    <div className={`relative w-20 h-20 rounded-3xl bg-gradient-to-br ${offering.gradient} flex items-center justify-center shadow-2xl group-hover:shadow-primary/60 transition-all duration-500 group-hover:-rotate-3 group-hover:scale-110`}>
+                      <div className="absolute inset-2 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm" />
+                      <div className="absolute inset-3 rounded-xl bg-gradient-to-br from-transparent to-black/10" />
+                      <Icon className="relative w-10 h-10 text-background drop-shadow-2xl" />
+                    </div>
                   </div>
-                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                  
+                  <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2 leading-tight">
                     {offering.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-muted-foreground leading-relaxed text-center">
-                    {offering.description}
-                  </CardDescription>
+                <CardContent className="relative z-10 px-8 pb-8">
+                  <div className="relative">
+                    {/* Decorative quote mark */}
+                    <div className="absolute -top-2 -left-2 text-6xl text-primary/10 font-serif leading-none select-none">"</div>
+                    <CardDescription className="text-muted-foreground leading-relaxed text-center relative z-10 pl-4">
+                      {offering.description}
+                    </CardDescription>
+                  </div>
                 </CardContent>
               </Card>
             );
